@@ -1,0 +1,52 @@
+$primary-gradient: linear-gradient(135deg, #6a5acd, #7b68ee);
+$text-dark: #2d2d2d;
+$text-light: #ffffff;
+$card-bg: #ffffff;
+
+.about-hero {
+  background: $primary-gradient;
+  color: $text-light;
+  padding: 100px 20px 80px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  p {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+}
+
+.about-content {
+  margin-top: -50px;
+  padding-bottom: 80px;
+}
+
+.about-card {
+  background: $card-bg;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-8px);
+  }
+
+  h3 {
+    color: #6a5acd;
+    margin-bottom: 15px;
+  }
+
+  p {
+    color: $text-dark;
+    font-size: 0.95rem;
+  }
+}
+
