@@ -9,7 +9,7 @@ export class AiService {
 
   
   constructor(private http: HttpClient) {}
-  private apiUrl = 'https://ai-based-interview-preparation-project-production.up.railway.app/api';
+  private apiUrl = '/api';
 
   // ===============================
   // SKILL INTERVIEW

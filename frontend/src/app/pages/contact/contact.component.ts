@@ -22,7 +22,9 @@ name = '';
 
     this.loading = true;
 
-    this.http.post('https://ai-based-interview-preparation-project-production.up.railway.app/api/feedback', {
+    this.http.post(
+      '/api/feedback',
+      {
 
       name: this.name,
       email: this.email,
