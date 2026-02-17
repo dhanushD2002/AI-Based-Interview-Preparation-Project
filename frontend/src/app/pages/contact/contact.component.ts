@@ -22,7 +22,8 @@ name = '';
 
     this.loading = true;
 
-    this.http.post('http://localhost:8080/api/feedback', {
+    this.http.post('/api/feedback', {
+
       name: this.name,
       email: this.email,
       message: this.feedback
