@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/resume")
 //@CrossOrigin(origins = "http://localhost:4200")
-@CrossOrigin(origins = "*")
+@CrossOrigin
 
 public class ResumeInterviewController {
 

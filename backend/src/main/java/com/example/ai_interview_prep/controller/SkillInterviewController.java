@@ -13,7 +13,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/ai")
 //@CrossOrigin(origins = "http://localhost:4200")
-@CrossOrigin(origins = "*")
+@CrossOrigin
 
 public class SkillInterviewController {
 
