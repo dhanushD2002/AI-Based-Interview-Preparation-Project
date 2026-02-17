@@ -4,7 +4,8 @@ import { Injectable } from '@angular/core';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
-  baseUrl = '/api/auth';
+baseUrl = 'https://ai-based-interview-preparation-project-production.up.railway.app/api/auth';
+;
 
   constructor(private http: HttpClient) {}
 

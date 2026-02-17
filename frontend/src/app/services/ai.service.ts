@@ -7,9 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class AiService {
 
-  private apiUrl = '/api';
-
+  
   constructor(private http: HttpClient) {}
+  private apiUrl = 'https://ai-based-interview-preparation-project-production.up.railway.app/api';
 
   // ===============================
   // SKILL INTERVIEW
