@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/feedback")
 //@CrossOrigin(origins = "http://localhost:4200")
-@CrossOrigin
 public class FeedbackController {
 
     private final EmailService emailService;
