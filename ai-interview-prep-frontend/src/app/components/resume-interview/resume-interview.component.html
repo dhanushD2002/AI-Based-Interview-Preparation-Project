@@ -1,0 +1,55 @@
+<div class="container mt-5">
+
+  <h2 class="text-center mb-4">Resume-Based Interview Questions</h2>
+
+  <!-- Upload Card -->
+  <div class="card shadow-sm p-4 mb-4">
+    <label class="form-label fw-semibold">Upload Resume (PDF / DOCX)</label>
+    <input type="file"
+           class="form-control mb-3"
+           (change)="onFileSelected($event)">
+
+    <button class="btn btn-primary w-100"
+            (click)="generateQuestions()"
+            [disabled]="loading">
+      {{ loading ? 'Analyzing...' : 'Generate Interview Questions' }}
+    </button>
+  </div>
+
+  <!-- Result Cards -->
+  <div *ngFor="let q of questions; let i = index" class="card shadow-sm mb-3">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <strong>Question {{ i + 1 }}</strong>
+      <button class="btn btn-sm btn-outline-primary"
+              (click)="toggle(q)">
+        {{ q.show ? 'Hide' : 'Show' }}
+      </button>
+    </div>
+
+    <div class="card-body" *ngIf="q.show">
+      <p><strong>Q:</strong> {{ q.question }}</p>
+      <p><strong>A:</strong></p>
+      <pre class="answer-box">{{ q.answer }}</pre>
+    </div>
+  </div>
+
+  <!-- Download Buttons -->
+<div class="text-end my-3" *ngIf="questions.length > 0">
+  <button class="btn btn-outline-secondary me-2"
+          (click)="downloadText()">
+    Download Text
+  </button>
+
+  <button class="btn btn-outline-danger me-2"
+          (click)="downloadPDF()">
+    Download PDF
+  </button>
+
+  <button class="btn btn-outline-primary"
+          (click)="downloadWord()">
+    Download Word
+  </button>
+</div>
+
+
+</div>

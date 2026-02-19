@@ -1,0 +1,85 @@
+<div class="container mt-5">
+
+  <!-- Title -->
+  <h2 class="text-center mb-4 fw-bold">
+    AI Skill Interview Questions
+  </h2>
+
+  <!-- Skill Selection Card -->
+  <div class="card shadow-sm mb-4 p-4">
+    <div class="row g-3 align-items-center">
+
+      <!-- Skills -->
+      <div class="col-md-6">
+        <label class="form-label fw-semibold">Select Skills</label>
+        <select class="form-select" multiple [(ngModel)]="skills">
+          <option>Java</option>
+          <option>Spring Boot</option>
+          <option>MySQL</option>
+          <option>Angular</option>
+          <option>JavaScript</option>
+        </select>
+      </div>
+
+      <!-- Difficulty -->
+      <div class="col-md-4">
+        <label class="form-label fw-semibold">Difficulty</label>
+        <select class="form-select" [(ngModel)]="difficulty">
+          <option value="Basic">Basic</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced">Advanced</option>
+        </select>
+      </div>
+
+      <!-- Button -->
+      <div class="col-md-2 d-grid">
+        <button class="btn btn-primary mt-4" (click)="generateQuestions()">
+          Generate
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Loading -->
+  <div *ngIf="loading" class="text-center my-4">
+    <div class="spinner-border text-primary"></div>
+    <p class="mt-2">Generating questions...</p>
+  </div>
+
+  <!-- Question Cards -->
+  <div *ngFor="let q of questions; let i = index" class="card mb-3 shadow-sm">
+
+    <div class="card-body">
+      <h5 class="fw-bold">
+        Q{{ i + 1 }}. {{ q.question }}
+      </h5>
+
+      <button
+        class="btn btn-outline-success btn-sm mt-2"
+        (click)="q.show = !q.show">
+        {{ q.show ? 'Hide Answer' : 'Show Answer' }}
+      </button>
+
+      <!-- Answer -->
+      <div class="answer-box mt-3" *ngIf="q.show">
+        <p>{{ q.answer }}</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="text-end my-3" *ngIf="questions.length > 0">
+  <button class="btn btn-outline-secondary me-2" (click)="downloadText()">
+    Download Text
+  </button>
+
+  <button class="btn btn-outline-danger me-2" (click)="downloadPDF()">
+    Download PDF
+  </button>
+
+  <button class="btn btn-outline-primary" (click)="downloadWord()">
+    Download Word
+  </button>
+</div>
+</div>

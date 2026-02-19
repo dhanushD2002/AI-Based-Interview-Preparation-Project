@@ -1,0 +1,52 @@
+<div class="dashboard-wrapper">
+
+  <div class="dashboard-container">
+
+    <!-- Title -->
+    <h2 class="dashboard-title">
+      AI Interview Preparation Dashboard
+    </h2>
+
+    <!-- Tabs -->
+    <ul class="nav nav-pills dashboard-tabs justify-content-center">
+      <li class="nav-item">
+        <button
+          class="nav-link"
+          [class.active]="activeTab === 'skill'"
+          (click)="activeTab = 'skill'">
+          Skill Interview
+        </button>
+      </li>
+
+      <li class="nav-item ms-2">
+        <button
+          class="nav-link"
+          [class.active]="activeTab === 'resume'"
+          (click)="activeTab = 'resume'">
+          Resume Interview
+        </button>
+      </li>
+    </ul>
+
+    <!-- Content Card -->
+    <div class="dashboard-card">
+      <app-skill-interview *ngIf="activeTab === 'skill'"></app-skill-interview>
+      <app-resume-interview *ngIf="activeTab === 'resume'"></app-resume-interview>
+    </div>
+
+  </div>
+  <div class="history-section" *ngIf="history.length > 0">
+  <h4 class="mt-4">Previous Interviews</h4>
+
+  <div class="history-card" *ngFor="let h of history">
+    <span class="badge bg-primary">{{ h.type }}</span>
+    <p class="mt-2"><b>Q:</b> {{ h.question }}</p>
+    <p><b>A:</b> {{ h.answer }}</p>
+    <small class="text-muted">
+      {{ h.createdAt | date:'medium' }}
+    </small>
+  </div>
+</div>
+
+
+</div>
