@@ -1,6 +1,6 @@
 {
-  "buildCommand": "cd frontend && npm install && npx ng build",
-  "outputDirectory": "frontend/dist/ai-interview-prep",
+  "buildCommand": "npm install && npx ng build",
+  "outputDirectory": "dist/ai-interview-prep",
   "framework": null,
   "rewrites": [
     {
