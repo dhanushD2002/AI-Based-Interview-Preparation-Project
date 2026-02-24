@@ -1,0 +1,54 @@
+$primary-gradient: linear-gradient(135deg, #6a5acd, #7b68ee);
+$text-dark: #2d2d2d;
+$text-light: #ffffff;
+$card-bg: #ffffff;
+
+
+.contact-hero {
+  background: $primary-gradient;
+  color: $text-light;
+  padding: 100px 20px 80px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 700;
+  }
+
+  p {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+}
+
+.contact-content {
+  margin-top: -50px;
+  padding-bottom: 80px;
+}
+
+.contact-card {
+  background: #fff;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.form-control {
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.submit-btn {
+  background: $primary-gradient;
+  color: #fff;
+  border-radius: 30px;
+  padding: 12px;
+  font-weight: 600;
+  border: none;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

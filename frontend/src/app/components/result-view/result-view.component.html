@@ -1,0 +1,18 @@
+<div class="result-container" *ngIf="questions.length">
+
+  <div class="question-card" *ngFor="let q of questions; let i = index">
+
+    <h3>Q{{ i + 1 }}. {{ q.question }}</h3>
+
+    <button (click)="toggleAnswer(q)">
+      {{ q.show ? 'Hide Answer' : 'Show Answer' }}
+    </button>
+
+    <div class="answer" *ngIf="q.show">
+      <p>{{ q.answer }}</p>
+    </div>
+
+  </div>
+
+</div>
+

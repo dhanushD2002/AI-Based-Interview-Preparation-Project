@@ -1,0 +1,62 @@
+<section class="contact-hero">
+  <div class="container text-center">
+    <h1>Feedback</h1>
+    <p>Your Feedback</p>
+  </div>
+</section>
+
+<section class="contact-content container">
+  <div class="row justify-content-center">
+    <div class="col-md-7">
+
+      <div class="contact-card">
+
+        <!-- IMPORTANT: (ngSubmit) -->
+        <form (ngSubmit)="submitFeedback()">
+
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Your Name"
+              name="name"
+              [(ngModel)]="name"
+              required>
+          </div>
+
+          <div class="mb-3">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Your Email"
+              name="email"
+              [(ngModel)]="email"
+              required>
+          </div>
+
+          <div class="mb-3">
+            <textarea
+              rows="4"
+              class="form-control"
+              placeholder="Your Feedback"
+              name="feedback"
+              [(ngModel)]="feedback"
+              required>
+            </textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="btn submit-btn w-100"
+            [disabled]="loading">
+
+            {{ loading ? 'Sending...' : 'Send Feedback' }}
+
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
